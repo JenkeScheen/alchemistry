@@ -6,24 +6,38 @@ sitemap: false
 
 # Challenge Tutorial
 
-*Materials are being prepared and will be published here before submissions open on
-**1 November 2026**.*
+A single notebook that walks the whole submission path end to end: downloading the test
+set, looking at what you have been given, generating example predictions, writing
+them in the required format, validating the file locally, and submitting it.
 
-This page will host the walkthrough for the **Alchemistry 2027 Antiviral Blind
-Challenge**: predicting binding free energies for a series of compounds against the
-**Dengue-2 NS2B-NS3 protease** using alchemical free energy methods.
+<p>
+  <a href="https://github.com/omsf/alchemistry/blob/main/blind_challenges/2027/tutorial/alchemistry_2027_tutorial.ipynb">
+    <strong>View the tutorial notebook on GitHub</strong></a>
+  &nbsp;·&nbsp;
+  <a href="{{ '/blind_challenges/2027/tutorial/alchemistry_2027_tutorial.ipynb' | relative_url }}" download>
+    download the <code>.ipynb</code></a>
+</p>
 
-## What will be here
+It runs locally in a few minutes and needs only `pandas`, `numpy`, `matplotlib`,
+`rdkit` and `huggingface_hub`:
 
-- **A step-by-step walkthrough** — loading the test set, setting up and running the
-  free energy calculations, and assembling a submission file.
-- **Baseline notebooks** — a worked reference calculation you can run end to end and
-  compare against, so you can check your pipeline before committing compute to the
-  full set.
-- **A validation script** — run it against your file *before* uploading. It checks the
-  row count, the required columns and their types, so a formatting mistake costs you
-  seconds locally rather than a rejected submission and a wait for the next
-  rate-limited slot.
+```bash
+pip install pandas numpy matplotlib rdkit huggingface_hub pyarrow
+```
+
+**It does not run a free energy calculation.** 
+
+## What it covers
+
+1. **Getting the data** — the 54 blinded compounds and the reference crystal
+   structure, pulled straight from the challenge dataset on Hugging Face.
+2. **Exploring the test set** — property distributions, the scaffold group.
+3. **The reference structure** — the NS2B–NS3 construct.
+4. **Example predictions** — a deliberately crude molecular-weight baseline.
+5. **Building the submission** — the exact column names, the units, and the
+   uncertainty column.
+6. **The edge file** — the ΔΔG schema for relative methods.
+7. **Submitting** — the Submit tab on the challenge web UI.
 
 ## Submission format, in brief
 
@@ -31,21 +45,25 @@ Predictions are submitted as a single `.parquet` (preferred) or `.csv` file with
 row per test-set compound. Alongside each prediction you also report an **uncertainty
 estimate** for it, in the same units as the prediction itself (kcal/mol). The exact
 column names and a worked example are shown on the **Submit** tab of the challenge
-Space, generated directly from the challenge configuration so they cannot drift out of
-date.
+Space.
+
+Relative, edge-based methods must additionally submit the perturbation network they
+ran, as one row per edge with its ΔΔG and uncertainty; the Space rejects a relative
+submission that arrives without one. Note that error metrics are reported as
+N/A for relative submissions.
 
 ## Getting help
 
 Questions about the science, the data, or submission mechanics are welcome in the
-**#alchemistry-2027** channel on [our Discord](https://discord.gg/R5JwtQqaN).
+**#😷alchemistry-2027-challenge** channel on [our Discord](https://discord.gg/U5XtzEVZ6).
 Automated validation receipts for your submissions are posted to
-**#alchemistry-2027-submissions**.
+**#😷alchemistry-2027-challenge-submissions**.
 
 ## Timeline
 
 | Date | Milestone |
 |---|---|
-| 5 October 2026 | Challenge announced |
+| October 2026 | Challenge announced |
 | 1 November 2026 | Test set released; submissions open |
 | 15 January 2027 | Deadline for the interim leaderboard |
 | 25 January 2027 | Interim leaderboard released |

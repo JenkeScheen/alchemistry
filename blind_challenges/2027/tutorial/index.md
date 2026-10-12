@@ -19,10 +19,10 @@ them in the required format, validating the file locally, and submitting it.
 </p>
 
 It runs locally in a few minutes and needs only `pandas`, `numpy`, `matplotlib`,
-`rdkit` and `huggingface_hub`:
+`rdkit`, `huggingface_hub` and `ipywidgets`:
 
 ```bash
-pip install pandas numpy matplotlib rdkit huggingface_hub pyarrow
+pip install pandas numpy matplotlib rdkit huggingface_hub pyarrow ipywidgets
 ```
 
 **It does not run a free energy calculation.** 

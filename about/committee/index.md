@@ -251,7 +251,7 @@ title: Organizing Committee
       <div class="member-name">Steven Ayoub</div>
       <div class="member-role">Graduate Student, University of California Irvine</div>
       <div class="member-bio">
-        Steven Ayoub is a graduate student in Pharmaceutical Sciences in the Mobley Lab at the University of California Irvine, where he works on accurately incorporating buried water molecules into protein–ligand binding affinity calculations and on enhanced sampling and free energy calculations for ligand binding modes. He earned his Master's degree in Chemistry from California State University, Northridge, developing an automated workflow for absolute binding free energy calculations, and later interned at Cadence OpenEye Scientific, where he helped expand and validate tools for identifying potential off-targets of small molecules.
+        Steven Ayoub is a graduate student in Pharmaceutical Sciences in the Mobley Lab at the University of California, Irvine. He is developing a pose-triage pipeline that combines co-folding, docking, molecular dynamics, enhanced sampling and free energy calculations to identify the correct ligand binding mode for binding affinity prediction. He earned his Master’s degree in Chemistry from California State University, Northridge, where he developed an automated workflow for absolute binding free energy calculations. He later interned at OpenEye, Cadence Molecular Sciences, where he helped expand and validate tools for identifying potential off-targets of small molecules.
       </div>
       <div class="member-links">
         <a href="https://www.linkedin.com/in/steven-ayoub-79b30714a/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>

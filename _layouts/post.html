@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<main class="main-content container news-post">
+    <a href="{{ '/news/' | relative_url }}" class="news-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> All news</a>
+    <div class="news-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        {%- if page.tag %}<span class="news-tag">{{ page.tag }}</span>{% endif %}
+    </div>
+    <h1 class="news-post-title">{{ page.title }}</h1>
+
+    {{ content }}
+</main>

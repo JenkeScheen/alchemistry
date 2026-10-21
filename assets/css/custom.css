@@ -776,4 +776,219 @@ img {
         flex-shrink: 0;
     }
 }
+
+/* News cards (home page preview and news page) */
+.news-preview {
+    margin: 3rem 0;
+}
+
+.news-preview .section-title {
+    font-size: 1.5rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.news-list {
+    display: grid;
+    gap: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.5rem;
+    color: var(--text-color);
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.news-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.news-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.news-tag {
+    padding: 0.1rem 0.6rem;
+    border-radius: 50px;
+    background: #ccfbf1;
+    color: var(--primary-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.news-title {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.35;
+}
+
+.news-summary {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+.news-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.news-preview-all {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+/* Single news post */
+.news-post {
+    max-width: 760px;
+}
+
+.news-back {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.news-post-title {
+    margin: 0.5rem 0 1.5rem;
+    font-size: 2rem;
+    line-height: 1.25;
+    color: var(--primary-dark);
+}
+
+.news-post h2 {
+    margin: 2.5rem 0 0.75rem;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    color: var(--primary-dark);
+}
+
+.news-post p,
+.news-post li {
+    line-height: 1.7;
+}
+
+.news-post p a,
+.news-post li a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.news-post p a:hover,
+.news-post li a:hover {
+    text-decoration: underline;
+}
+
+/* Logo banner at the top of a post */
+.post-banner {
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 1.75rem;
+    background: var(--gradient-main);
+    border-radius: 16px;
+}
+
+.post-banner img {
+    width: 300px;
+}
+
+.news-post .post-lead {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--primary-dark);
+}
+
+/* Highlighted board for a post's key information */
+.post-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin: 2rem 0;
+    padding: 1.5rem 1.75rem;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    border: 1px solid #99f6e4;
+    border-left: 6px solid var(--primary-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+}
+
+.post-callout-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.6rem;
+    background: white;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+
+.news-post .post-callout p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #134e4a;
+}
+
+.news-post .post-callout a {
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.post-figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.post-figure img {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+    .post-banner {
+        padding: 1.75rem 1rem;
+    }
+
+    .post-banner img {
+        width: 220px;
+    }
+
+    .post-callout {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1.25rem;
+    }
 }

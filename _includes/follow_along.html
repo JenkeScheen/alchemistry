@@ -1,0 +1,100 @@
+{% comment %}
+"Follow Along" section: follow buttons, the latest Bluesky posts (fetched live from
+Bluesky's public API), and any LinkedIn posts listed in page.social.linkedin_embeds.
+{% endcomment %}
+{%- assign social = page.social -%}
+<section class="follow-along">
+    <h2 class="section-title">Follow Along</h2>
+    <div class="follow-links">
+        {%- if social.bluesky %}
+        <a href="https://bsky.app/profile/{{ social.bluesky }}" class="follow-link" target="_blank" rel="noopener"><i class="fab fa-bluesky" aria-hidden="true"></i> Bluesky</a>
+        {%- endif %}
+        {%- if social.linkedin %}
+        <a href="{{ social.linkedin }}" class="follow-link" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        {%- endif %}
+        {%- if social.youtube %}
+        <a href="{{ social.youtube }}" class="follow-link" target="_blank" rel="noopener"><i class="fab fa-youtube" aria-hidden="true"></i> Past talks on YouTube</a>
+        {%- endif %}
+    </div>
+    {%- if social.bluesky %}
+    <div class="bluesky-feed" data-handle="{{ social.bluesky }}" data-limit="{{ social.bluesky_posts | default: 3 }}">
+        <p class="bluesky-feed-status">Loading posts from Bluesky…</p>
+    </div>
+    {%- endif %}
+    {%- if social.linkedin_embeds.size > 0 %}
+    <div class="linkedin-embeds">
+        {%- for src in social.linkedin_embeds %}
+        <iframe src="{{ src }}" title="LinkedIn post from the Free Energy Workshop" loading="lazy" allowfullscreen></iframe>
+        {%- endfor %}
+    </div>
+    {%- endif %}
+</section>
+{%- if social.bluesky %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var root = document.querySelector('.bluesky-feed');
+    var handle = root.dataset.handle;
+    var limit = parseInt(root.dataset.limit, 10) || 3;
+    var profile = 'https://bsky.app/profile/' + handle;
+
+    function el(tag, className, text) {
+        var node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text) node.textContent = text;
+        return node;
+    }
+
+    function showFallback() {
+        root.innerHTML = '';
+        var p = el('p', 'bluesky-feed-status', 'Posts could not be loaded right now. ');
+        var a = el('a', 'intro-link', 'See them on Bluesky');
+        a.href = profile;
+        p.appendChild(a);
+        root.appendChild(p);
+    }
+
+    // First image of a post: attached photos, a quoted post's media, or a link card's preview
+    function thumbnail(embed) {
+        if (!embed) return null;
+        var media = embed.media || embed;
+        if (media.images && media.images.length) return { src: media.images[0].thumb, alt: media.images[0].alt };
+        if (media.external && media.external.thumb) return { src: media.external.thumb, alt: media.external.title };
+        return null;
+    }
+
+    fetch('https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?filter=posts_no_replies&limit=20&actor=' + encodeURIComponent(handle))
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (data) {
+            var posts = (data.feed || []).filter(function (item) { return !item.reason; }).slice(0, limit);
+            if (!posts.length) throw new Error('no posts');
+            root.innerHTML = '';
+            posts.forEach(function (item) {
+                var post = item.post;
+                var card = el('a', 'bluesky-post');
+                card.href = profile + '/post/' + post.uri.split('/').pop();
+                card.target = '_blank';
+                card.rel = 'noopener';
+
+                var meta = el('div', 'bluesky-post-meta');
+                meta.appendChild(el('i', 'fab fa-bluesky'));
+                meta.appendChild(el('span', null, new Date(post.record.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })));
+                card.appendChild(meta);
+
+                var image = thumbnail(post.embed);
+                if (image) {
+                    var img = el('img', 'bluesky-post-image');
+                    img.src = image.src;
+                    img.alt = image.alt || '';
+                    img.loading = 'lazy';
+                    card.appendChild(img);
+                }
+
+                card.appendChild(el('p', 'bluesky-post-text', post.record.text));
+                card.appendChild(el('span', 'news-more', 'View on Bluesky →'));
+                root.appendChild(card);
+            });
+        })
+        .catch(showFallback);
+});
+</script>
+{%- endif %}

@@ -1,0 +1,12 @@
+{%- assign news_limit = include.limit | default: 3 -%}
+{%- if site.posts.size > 0 -%}
+<section class="news-preview">
+    <h2 class="section-title">Latest News</h2>
+    <div class="news-grid">
+        {%- for post in site.posts limit: news_limit %}
+        {% include news_card.html post=post %}
+        {%- endfor %}
+    </div>
+    <p class="news-preview-all"><a href="{{ '/news/' | relative_url }}" class="intro-link">See all news <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+</section>
+{%- endif -%}

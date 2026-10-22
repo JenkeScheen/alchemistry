@@ -2,6 +2,19 @@
 layout: default
 ---
 
+{% if page.announcement %}
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+    <div class="container">
+        <span class="announcement-label">{{ page.announcement.label | default: 'New' }}</span>
+        <span>{{ page.announcement.text }}</span>
+        {% if page.announcement.link %}
+        <a href="{{ page.announcement.link | relative_url }}" class="announcement-link">{{ page.announcement.link_text | default: 'Learn more' }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
 <!-- Hero Section -->
 <header class="hero-section">
     <div class="container hero-grid">
@@ -27,10 +40,16 @@ layout: default
             {% endif %}
 
             <div class="hero-actions">
-                <a href="https://www.zeffy.com/en-US/ticketing/register-for-the-2026-free-energy-workshop"
-                    class="btn btn-premium btn-light">Registration</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJRdIIafgCCvxN5MyfU885TekJDu8QAsYJLnkWZ1SaAzG_zw/viewform?usp=header"
-                    class="btn btn-premium btn-light">Abstract Submission</a>
+                {% if page.next_workshop.registration_url and page.next_workshop.registration_url != "" %}
+                <a href="{{ page.next_workshop.registration_url }}" class="btn btn-premium btn-light">Registration</a>
+                {% else %}
+                <span class="btn btn-premium is-disabled" aria-disabled="true">Registration opens soon</span>
+                {% endif %}
+                {% if page.next_workshop.abstract_url and page.next_workshop.abstract_url != "" %}
+                <a href="{{ page.next_workshop.abstract_url }}" class="btn btn-premium btn-light">Abstract Submission</a>
+                {% else %}
+                <span class="btn btn-premium is-disabled" aria-disabled="true">Abstract submission opens soon</span>
+                {% endif %}
                 <a href="{{ '/news/' | relative_url }}" class="btn btn-premium btn-outline">Latest Updates</a>
             </div>
         </div>

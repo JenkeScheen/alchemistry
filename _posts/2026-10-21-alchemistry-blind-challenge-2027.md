@@ -67,7 +67,7 @@ This challenge will be run through HuggingFace and Discord just like previous ch
 
 ## You don’t own a room full of GPUs? You can still participate!
 
-We understand that not everyone has access to a large cluster to run binding free energy calculation simulations on. Participants will be able to put in requests for licenses for system preparation and/or compute tokens with the following software vendors: Cresset, OpenEye, Rowan and potentially several more. Note that this will be on a first come first serve basis, that you will need to verify your identity and that the terms and offerings may differ between vendors – details to be announced.
+We understand that not everyone has access to a large cluster to run binding free energy calculation simulations on. Participants will be able to put in requests for licenses for system preparation and/or compute tokens with the following software vendors: Cresset, OpenEye Cadence Molecular Sciences, Rowan and potentially several more. Note that this will be on a first come first serve basis, that you will need to verify your identity and that the terms and offerings may differ between vendors – details to be announced.
 
 ## Other competitions to bite into – or cook your own
 

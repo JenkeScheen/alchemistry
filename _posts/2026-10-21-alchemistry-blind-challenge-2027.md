@@ -12,7 +12,7 @@ permalink: /news/:year/:month/:title/
 </div>
 
 {:.post-lead}
-The Alchemistry 2027 committee is hosting a blind challenge in collaboration with OpenADMET and OpenBind.
+The Alchemistry 2027 committee is hosting a blind challenge in collaboration with ASAP Discovery, OpenADMET and OpenBind.
 
 Physics-based alchemical free energy calculations have become an integral part of modern structure-enabled drug discovery workflows. Advances in software, force fields, sampling methods, and access to computational resources have made it possible to apply these methods routinely to large, chemically diverse problems, including small-molecule modalities and beyond. Free energy methods are widely applied in novel prospective drug discovery projects, but the field lacks an open prospective testing scenario that can fairly assess the generalizability of the wide range of available techniques.
 

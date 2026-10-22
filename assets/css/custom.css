@@ -779,42 +779,122 @@ img {
 
 /* Announcement bar (home page) */
 .announcement-bar {
-    background: #0f172a;
-    color: #e5e7eb;
+    position: relative;
+    color: #f1f5f9;
     font-size: 0.95rem;
+    font-weight: 500;
+    /* Dark bar with a teal glow that drifts slowly from side to side */
+    background: linear-gradient(90deg, #0b1220 0%, #0f2a2e 30%, #115e59 50%, #0f2a2e 70%, #0b1220 100%);
+    background-size: 200% 100%;
+    box-shadow: inset 0 -1px 0 rgba(45, 212, 191, 0.45);
+    animation: announcement-glow 10s ease-in-out infinite alternate;
 }
 
 .announcement-bar .container {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0.7rem 20px;
+    padding: 0.8rem 20px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 0.4rem 0.75rem;
+    gap: 0.5rem 0.9rem;
     text-align: center;
 }
 
 .announcement-label {
-    padding: 0.1rem 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.7rem;
     border-radius: 50px;
-    background: #fde68a;
-    color: #78350f;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    background: linear-gradient(135deg, #fde68a 0%, #f59e0b 100%);
+    color: #451a03;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    box-shadow: 0 0 14px rgba(245, 158, 11, 0.45);
+}
+
+.announcement-label::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: #451a03;
+    animation: announcement-pulse 1.8s ease-out infinite;
 }
 
 .announcement-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.95rem;
+    border: 1px solid rgba(94, 234, 212, 0.55);
+    border-radius: 50px;
+    background: rgba(45, 212, 191, 0.12);
     color: #5eead4;
-    font-weight: 600;
+    font-size: 0.875rem;
+    font-weight: 700;
     white-space: nowrap;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
-.announcement-link:hover {
-    color: white;
+/* The whole bar is clickable, not just the button */
+.announcement-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.announcement-link i {
+    transition: transform 0.2s;
+}
+
+.announcement-bar:hover .announcement-link,
+.announcement-link:focus-visible {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #0b1220;
+}
+
+.announcement-bar:hover .announcement-link i {
+    transform: translateX(3px);
+}
+
+@keyframes announcement-glow {
+    from { background-position: 0% 0; }
+    to { background-position: 100% 0; }
+}
+
+@keyframes announcement-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(69, 26, 3, 0.55); }
+    100% { box-shadow: 0 0 0 0.45rem rgba(69, 26, 3, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .announcement-bar,
+    .announcement-label::before {
+        animation: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .announcement-bar {
+        font-size: 0.85rem;
+    }
+
+    .announcement-bar .container {
+        padding: 0.6rem 16px;
+        gap: 0.35rem 0.6rem;
+    }
+
+    .announcement-link {
+        padding: 0.2rem 0.75rem;
+        font-size: 0.8rem;
+    }
 }
 
 /* News cards (home page preview and news page) */

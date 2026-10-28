@@ -70,7 +70,7 @@ The 2025 Free Energy Workshop, hosted by the Alchemistry Organization Committee 
 |---------------|---------------------|
 | **Institution:** Chief Executive Officer, Drug Hunter | **Institution:** Professor and Endowed Chair of Chemistry and Biochemistry and the Director of the National Biomedical Computation Resource at University of California, San Diego |
 | **Title:** *"Not Your Grandparents' Drugs: Modern Highlights in Small Molecule Drug Discovery"* | **Title:** *"Multiscale Computational Microscopy (For Drug and Immunogen Design)"* |
-| **Video:** YouTube | **Video:** YouTube |
+| **Video:** [YouTube](https://www.youtube.com/watch?v=H_N97fDhE3w) | **Video:** [YouTube](https://www.youtube.com/watch?v=zH1pYTxpFUQ) |
 
 # Schedule
 ## May 6th, 2025 (Day 1)
@@ -80,23 +80,23 @@ The 2025 Free Energy Workshop, hosted by the Alchemistry Organization Committee 
 | 8:00           |                   | Venue opens; Set up posters for evening poster session; continental breakfast |
 | 8:40           | George Giambasu   | Welcome + Opening Remarks |
 | **Session Chair: George Giambasu** | | |
-| 9:00           | David Mobley      | Binding free energy calculations with separated topologies -- successes and challenges |
-| 9:25           | Junjie Zou        | XFF: Development and benchmarking of small molecule force field and its applications in binding free energy predictions |
-| 9:50           | Emilio Gallicchio | The Alchemical Transfer Method: Theory, Methods, and Applications |
+| 9:00           | David Mobley      | [Binding free energy calculations with separated topologies -- successes and challenges](https://www.youtube.com/watch?v=mzAlCU08A4k) |
+| 9:25           | Junjie Zou        | [XFF: Development and benchmarking of small molecule force field and its applications in binding free energy predictions](https://www.youtube.com/watch?v=3r5_ljCWB2U) |
+| 9:50           | Emilio Gallicchio | [The Alchemical Transfer Method: Theory, Methods, and Applications](https://www.youtube.com/watch?v=FQd5PkLWg10) |
 | 10:15          |                   | Break |
 | **Session Chair: Alexander Williams** | | |
 | 10:35          | Barbara Farkas    | Revisiting fragment screening campaigns through the eye of absolute binding FEP |
-| 11:00          | Daniel Cole       | A transferable double exponential force field for condensed phase simulations |
+| 11:00          | Daniel Cole       | [A transferable double exponential force field for condensed phase simulations](https://www.youtube.com/watch?v=OHDXrrCFynI) |
 | 11:25          | Vytautas Gapsys   | ABFE pitfalls in virtual screening |
 | 11:50          |                   | Lunch |
 | **Session Chair: Heidi Koldsø** | | |
-| 1:10           | Dennis Hu         | Keynote Speaker #1: Not Your Grandparents' Drugs: Modern Highlights in Small Molecule Drug Discovery |
-| 2:00           | Matthew Segall    | Physical Model Induction with QuanSA: Affinity Prediction that is Synergistic with Simulation-Based Methods |
-| 2:25           | Ara Abramyan      | Accurate Physics-Based Prediction of Binding Affinities of RNA- and DNA-Targeting Ligands |
+| 1:10           | Dennis Hu         | Keynote Speaker #1: [Not Your Grandparents' Drugs: Modern Highlights in Small Molecule Drug Discovery](https://www.youtube.com/watch?v=H_N97fDhE3w) |
+| 2:00           | Matthew Segall    | [Physical Model Induction with QuanSA: Affinity Prediction that is Synergistic with Simulation-Based Methods](https://www.youtube.com/watch?v=Cl3O4uVleio) |
+| 2:25           | Ara Abramyan      | [Accurate Physics-Based Prediction of Binding Affinities of RNA- and DNA-Targeting Ligands](https://www.youtube.com/watch?v=LWkzWi-hdaI) |
 | 2:50           |                   | Break |
 | **Session Chair: AK Nandkeolyar** | | |
 | 3:10           | Jonathan Essex    | Grand Canonical Nonequilibrium Candidate Monte Carlo for In Silico Prediction of Fragment Binding Sites, Modes, and Affinities |
-| 3:35           | Hannah Baumann    | The Alchemist's toolbox: Expanding the domain of applicability of the OpenFE ecosystem |
+| 3:35           | Hannah Baumann    | [The Alchemist's toolbox: Expanding the domain of applicability of the OpenFE ecosystem](https://www.youtube.com/watch?v=5eVqXKc3kL0) |
 | 4:00           |                   | 1-min Poster Flash Talks |
 | 4:30           |                   | Poster Session 1 - Sponsored by JCIM |
 | 6:00           |                   | Travel to evening social |
@@ -109,26 +109,26 @@ The 2025 Free Energy Workshop, hosted by the Alchemistry Organization Committee 
 | 8:00           |                               | Venue opens; Set up posters for evening poster session; continental breakfast |
 | 8:30           |                               | Opening Announcements; poster prizes |
 | **Session Chair: Cesar Mendoza-Martinez** | | |
-| 8:35           | John Chodera                  | Teaching free energy calculations to learn |
-| 9:00           | Michael Shirts                | Playing Mr. Potato Head with Free Energy Methods: Alchemical Metadynamics, Replica Exchange of Expanded Ensembles (REXEE), and Multi-Topology Replica Exchange of Expanded Enseble (MT-REXEE) |
-| 9:25           | Finlay Clark                  | Robust Automated Truncation Point Selection for Molecular Simulations |
-| 9:50           | Michael Liesen                | Implementing Ligand Overlay in λ-Dynamics with Bias-Updated Gibbs Sampling (LaDyBUGS) as an Alternative Topology Model for Free Energy Calculations |
+| 8:35           | John Chodera                  | [Teaching free energy calculations to learn](https://www.youtube.com/watch?v=-cs60jLKJ3U) |
+| 9:00           | Michael Shirts                | [Playing Mr. Potato Head with Free Energy Methods: Alchemical Metadynamics, Replica Exchange of Expanded Ensembles (REXEE), and Multi-Topology Replica Exchange of Expanded Enseble (MT-REXEE)](https://www.youtube.com/watch?v=HrnywCIlWJc) |
+| 9:25           | Finlay Clark                  | [Robust Automated Truncation Point Selection for Molecular Simulations](https://www.youtube.com/watch?v=XHwyKWCIBPc) |
+| 9:50           | Michael Liesen                | [Implementing Ligand Overlay in λ-Dynamics with Bias-Updated Gibbs Sampling (LaDyBUGS) as an Alternative Topology Model for Free Energy Calculations](https://www.youtube.com/watch?v=ZU74I-bEoBs) |
 | 10:15          |                               | Break |
 | **Session Chair: Cristian Gabellini** | | |
-| 10:35          | Anupam Ojha                   | End-to-end automated simulation pipeline with machine-learned force fields for accelerated drug-target kinetic and thermodynamic predictions |
-| 11:00          | William (Zhiyi) Wu            | Target deconvolution with ABFE calculations |
-| 11:25          | Gianni De Fabritiis           | Accurate Relative Binding Free Energy Calculations Using AceForce 1.0 |
+| 10:35          | Anupam Ojha                   | [End-to-end automated simulation pipeline with machine-learned force fields for accelerated drug-target kinetic and thermodynamic predictions](https://www.youtube.com/watch?v=9drEmmGAhU8) |
+| 11:00          | William (Zhiyi) Wu            | [Target deconvolution with ABFE calculations](https://www.youtube.com/watch?v=L_TAydzjV3g) |
+| 11:25          | Gianni De Fabritiis           | [Accurate Relative Binding Free Energy Calculations Using AceForce 1.0](https://www.youtube.com/watch?v=Jo3_tcAYoOc) |
 | 11:50          |                               | Lunch |
 | **Session Chair: Jonah Vilseck** | | | 
-| 1:10           | Rommie Amaro                  | Keynote Speaker #2: Multiscale Computational Microscopy |
-| 2:00           | Shams Mehdi                   | AI-augmented Molecular Dynamics for Drug Dissociation Kinetics and Interpretable Insights into Drug-Target Interactions |
-| 2:25           | Natasja Brooijmans            | Drugging the undruggable using covalency and computationally-driven design |
+| 1:10           | Rommie Amaro                  | Keynote Speaker #2: [Multiscale Computational Microscopy](https://www.youtube.com/watch?v=zH1pYTxpFUQ) |
+| 2:00           | Shams Mehdi                   | [AI-augmented Molecular Dynamics for Drug Dissociation Kinetics and Interpretable Insights into Drug-Target Interactions](https://www.youtube.com/watch?v=8kP20yHjqJA) |
+| 2:25           | Natasja Brooijmans            | [Drugging the undruggable using covalency and computationally-driven design](https://www.youtube.com/watch?v=sNahucZaF4Y) |
 | 2:50           |                               | Break + Group Photo |
 | **Session Chair: Dima Lupyan** | | |
-| 3:10           | Abba Leffler                  | Exploiting solvent exposed salt-bridge interactions for the discovery of potent inhibitors of SOS1 using free-energy perturbation simulations |
-| 3:35           | Olivia Pierce                 | Computational Modeling of Heterobifunctional Degraders of Catalytically Inactive Interleukin Receptor Associated Kinase 3 (IRAK3) |
-| 4:00           | Steven Albanese               | Free Energy Calculations for ADMET Liabilities: A Cyp2D6 case study |
-| 4:25           | Shi Zhang                     | Advanced alchemical free energy methods for drug discovery in AMBER/AMBER Drug Discovery Boost |
+| 3:10           | Abba Leffler                  | [Exploiting solvent exposed salt-bridge interactions for the discovery of potent inhibitors of SOS1 using free-energy perturbation simulations](https://www.youtube.com/watch?v=WUSlsshPHRE) |
+| 3:35           | Olivia Pierce                 | [Computational Modeling of Heterobifunctional Degraders of Catalytically Inactive Interleukin Receptor Associated Kinase 3 (IRAK3)](https://www.youtube.com/watch?v=S0QrFtaqn7k) |
+| 4:00           | Steven Albanese               | [Free Energy Calculations for ADMET Liabilities: A Cyp2D6 case study](https://www.youtube.com/watch?v=iP_lq1LALPw) |
+| 4:25           | Shi Zhang                     | [Advanced alchemical free energy methods for drug discovery in AMBER/AMBER Drug Discovery Boost](https://www.youtube.com/watch?v=Z-oLyUu0Nfw) |
 | 5:00           |                               | Poster Session 2 - Sponsored by JCTC |
 
 ## May 8th, 2025 (Day 3)
@@ -138,14 +138,14 @@ The 2025 Free Energy Workshop, hosted by the Alchemistry Organization Committee 
 | 8:00           |                        | Venue opens; continental breakfast |
 | 8:30           |                        | Opening Announcements; poster prizes |
 | **Session Chair: Monica Barron** | | |
-| 8:35           | Lingle Wang            | Free Energy Calculations to Advance Drug Discovery: Small Molecules, Peptides, and Biologics |
-| 9:00           | Stefan Boresch         | Direct free energy simulations with neural network potentials |
-| 9:25           | Sirish Kaushik Lakkaraju| MDFit+: Integrating machine-learning & molecular simulations to predict ligand potency |
-| 9:50           | Xinqiang Ding          | Improve Free Energy Estimate for Free |
+| 8:35           | Lingle Wang            | [Free Energy Calculations to Advance Drug Discovery: Small Molecules, Peptides, and Biologics](https://www.youtube.com/watch?v=-0G4opVeN10) |
+| 9:00           | Stefan Boresch         | [Direct free energy simulations with neural network potentials](https://www.youtube.com/watch?v=mtqiuNtnTkY) |
+| 9:25           | Sirish Kaushik Lakkaraju| [MDFit+: Integrating machine-learning & molecular simulations to predict ligand potency](https://www.youtube.com/watch?v=TNrG9cQfpl8) |
+| 9:50           | Xinqiang Ding          | [Improve Free Energy Estimate for Free](https://www.youtube.com/watch?v=ZT0hSy2buMM) |
 | 10:15          |                        | Break |
 | **Session Chair: Michael Liesen** | | |
 | 10:35          | Huafeng Xu             | Free energy calculations in the discovery and optimization of targeted protein degraders |
-| 11:00          | Niels Kristian Madsen  | Residence-time scoring for high-throughput computer-aided drug design |
+| 11:00          | Niels Kristian Madsen  | [Residence-time scoring for high-throughput computer-aided drug design](https://www.youtube.com/watch?v=TptZeEI89Vw) |
 | 11:25          | Abir Ganguly           | Accurate binding affinity predictions for protein-peptide systems using physics-based methods. |
 | 11:50          |                        | Closing Remarks |
 

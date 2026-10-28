@@ -607,6 +607,18 @@ img {
     font-weight: 600;
 }
 
+/* Links in content tables (talk videos, slides) would otherwise look like plain text */
+.main-content td a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.main-content td a:hover {
+    color: var(--primary-dark);
+}
+
 .hero-image {
     max-width: 100%;
     height: auto;

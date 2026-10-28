@@ -5,28 +5,7 @@ title: Invited Speakers
 
 # Invited Speakers
 
-We are pleased to announce the invited speakers for the 2026 workshop.
-
-| **Speaker**              | **Affiliation**                                             |
-| ------------------------ | ----------------------------------------------------------- |
-| Julien Michel            | OpenBioSim & University of Edinburgh                        |
-| Haoyu Yu                 | Anew Therapeutics                                           |
-| Marco Cecchini           | University of Strassbourg                                   |
-| Joseph Bluck             | Bayer AG                                                    |
-| Stephan Ehrlich          | UCB                                                         |
-| Narjes Ansari            | Qubit Pharmaceuticals                                       |
-| David Pearlman           | QSimulate                                                   |
-| Domen Pregeljc           | ETH Zurich                                                  |
-| Francesco Luigi Gervasio | University of Geneva                                        |
-| Jonah Vilseck            | Indiana University School of Medicine                       |
-| Hannah Baumann           | Open Free Energy                                            |
-| Chris Neale              | OpenEye                                                     |
-| Ramon Crehuet            | Institute for Advanced Chemistry of Catalonia (IQAC) - CSIC |
-| Vincent Voelz            | Temple Uni                                                  |
-| Vladimir Aladinskiy      | Insilico Medicine                                           |
-| Willem Jespers           | Groningen University                                        |
-| Robert Abel              | Schrodinger                                                 |
-| Jasmin Guven             | University of Edinburgh                                     |
+The invited speakers for the 2027 workshop will be announced soon. Please check back for updates.
 
 <style>
 table {

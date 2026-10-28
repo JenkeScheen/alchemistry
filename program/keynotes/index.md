@@ -1,6 +1,9 @@
 ---
 layout: page
 title: Keynote Speakers
+# Picture and text shown when the link is shared on LinkedIn and other sites
+image: /assets/images/news/keynote-speakers-2027.jpg
+description: Benoît Roux (University of Chicago) and Frank Noé (Microsoft Research AI for Science) will give the keynote lectures at Alchemistry 2027.
 ---
 
 {% comment %}Speaker details live in _data/keynotes.yml, which also feeds the home page preview.{% endcomment %}

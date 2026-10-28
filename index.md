@@ -8,6 +8,8 @@ next_workshop:
   dates: "May 3–5, 2027"
   location: "San Francisco, CA"
   venue: "Merck Research Laboratories"
+  # Shown under the venue with a Google Maps link built from it
+  address: "213 East Grand Avenue, South San Francisco, CA 94080"
   # Paste the 2027 links when they exist; empty shows the button as "opens soon"
   registration_url: ""
   abstract_url: ""
@@ -20,12 +22,6 @@ social:
   # LinkedIn has no public feed, but single posts can be embedded: on the post, choose
   # "… > Embed this post" and paste just the src URL, e.g. https://www.linkedin.com/embed/feed/update/urn:li:share:123
   linkedin_embeds: []
-# Optional banner above the hero; delete this block to hide it
-announcement:
-  label: New
-  text: "Keynote speakers announced: Benoît Roux and Frank Noé will give the 2027 keynote lectures."
-  link: /news/2026/10/keynote-speakers-announced/
-  link_text: Learn more
 ---
 
 {:.intro-text}

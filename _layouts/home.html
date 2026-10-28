@@ -34,7 +34,16 @@ layout: default
                 </div>
                 <div class="next-workshop-row">
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    <span>{{ page.next_workshop.location }}{% if page.next_workshop.venue %} · {{ page.next_workshop.venue }}{% endif %}</span>
+                    <div>
+                        <span>{{ page.next_workshop.location }}{% if page.next_workshop.venue %} · {{ page.next_workshop.venue }}{% endif %}</span>
+                        {% if page.next_workshop.address %}
+                        <span class="next-workshop-address">
+                            {{ page.next_workshop.address }} ·
+                            <a href="https://www.google.com/maps/search/?api=1&amp;query={{ page.next_workshop.address | url_encode }}" target="_blank" rel="noopener">Google Maps</a> ·
+                            <a href="{{ '/about/venue/' | relative_url }}">Venue details</a>
+                        </span>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
             {% endif %}
@@ -50,7 +59,6 @@ layout: default
                 {% else %}
                 <span class="btn btn-premium is-disabled" aria-disabled="true">Abstract submission opens soon</span>
                 {% endif %}
-                <a href="{{ '/news/' | relative_url }}" class="btn btn-premium btn-outline">Latest Updates</a>
             </div>
         </div>
 

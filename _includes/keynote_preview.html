@@ -1,0 +1,17 @@
+{%- if site.data.keynotes.size > 0 -%}
+<section class="keynote-preview">
+    <h2 class="section-title">Keynote Speakers</h2>
+    <div class="keynote-preview-grid">
+        {%- for speaker in site.data.keynotes %}
+        <a class="keynote-chip" href="{{ '/program/keynotes/' | relative_url }}">
+            <img src="{{ speaker.photo | relative_url }}" alt="{{ speaker.name }}" class="keynote-chip-photo" loading="lazy">
+            <div>
+                <h3 class="keynote-chip-name">{{ speaker.name }}</h3>
+                <p class="keynote-chip-affiliation">{{ speaker.affiliation | xml_escape }}</p>
+                <p class="keynote-chip-talk">{% if speaker.talk_title != "" %}“{{ speaker.talk_title }}”{% else %}Talk title to be announced{% endif %}</p>
+            </div>
+        </a>
+        {%- endfor %}
+    </div>
+</section>
+{%- endif -%}

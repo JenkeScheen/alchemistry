@@ -23,8 +23,8 @@ social:
 # Optional banner above the hero; delete this block to hide it
 announcement:
   label: New
-  text: "Coming with the 2027 workshop: the Alchemistry Blind Challenge for predicting binding free energies."
-  link: /news/2026/10/alchemistry-blind-challenge-2027/
+  text: "Keynote speakers announced: Benoît Roux and Frank Noé will give the 2027 keynote lectures."
+  link: /news/2026/10/keynote-speakers-announced/
   link_text: Learn more
 ---
 
@@ -34,6 +34,8 @@ announcement:
 For details about previous conferences please check the [Previous Workshops]({{ '/archive/2026/' | relative_url }}){: .intro-link}.
 
 {% include news_preview.html limit=3 %}
+
+{% include keynote_preview.html %}
 
 {:.center-container}
 ### Important Dates

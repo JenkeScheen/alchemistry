@@ -777,6 +777,39 @@ img {
     }
 }
 
+/* Speaker Grid: cards side by side, photo stacked above details */
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.speaker-grid .speaker-card {
+    flex-direction: column;
+    min-height: 0;
+    margin-bottom: 0;
+}
+
+.speaker-grid .speaker-image-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+.speaker-grid .speaker-image {
+    object-position: center top;
+}
+
+.speaker-grid .speaker-details {
+    padding: 2rem;
+    justify-content: flex-start;
+}
+
+.speaker-grid .speaker-name {
+    font-size: 1.75rem;
+}
+
 /* Announcement bar (home page) */
 .announcement-bar {
     position: relative;
@@ -1130,6 +1163,68 @@ img {
     color: rgba(255, 255, 255, 0.85);
     background: rgba(255, 255, 255, 0.12);
     border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+/* Keynote preview (home page) */
+.keynote-preview {
+    margin: 3rem 0;
+}
+
+.keynote-preview .section-title {
+    font-size: 1.5rem;
+}
+
+.keynote-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: 1.5rem;
+}
+
+.keynote-chip {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    color: var(--text-color);
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.keynote-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.keynote-chip-photo {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.keynote-chip-name {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+}
+
+.keynote-chip-affiliation {
+    margin: 0.15rem 0 0;
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+.keynote-chip-talk {
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #6b7280;
 }
 
 /* Follow Along: social links and live Bluesky posts (home page) */

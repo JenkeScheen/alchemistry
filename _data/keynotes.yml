@@ -1,0 +1,18 @@
+# Keynote speakers for the upcoming workshop.
+# Used by the Keynotes page (program/keynotes/) and the home page preview.
+# Leave talk_title empty until the title is confirmed; it shows as "To Be Announced".
+- name: Benoît Roux
+  photo: /assets/images/Benoit_Roux_headshot.jpg
+  role: Amgen Professor of Biochemistry and Molecular Biophysics, University of Chicago
+  affiliation: University of Chicago
+  talk_title: ""
+  bio: >-
+    Benoît Roux earned his Ph.D. in biophysics at Harvard University under Martin Karplus. He held faculty positions at the University of Montréal and Weill Cornell before moving to the University of Chicago, where he is the Amgen Professor of Biochemistry and Molecular Biophysics. A true pioneer in computational statistical mechanics, his group uses simulations to rigorously compute conformational and binding free energies for membrane/lipid biophysics, specifically ion channels, transporters, and protein kinases. His foundational methodologies underpin modern alchemical and path-sampling workflows, including the widely adopted restrained-ligand formalism for absolute binding free energies, the string method with swarms of trajectories, and WHAM/MBAR free energy estimators, alongside the Drude polarizable force field. He is the co-author of key texts including Biological Membranes and Computational Modeling and Simulations of Biomolecular Systems, a Fellow of the Biophysical Society and the AAAS, and a member of the Royal Society of Canada.
+
+- name: Frank Noé
+  photo: /assets/images/Frank_Noe_headshot.jpg
+  role: Partner Research Manager, Microsoft Research AI for Science
+  affiliation: Microsoft Research AI for Science
+  talk_title: ""
+  bio: >-
+    Frank Noé earned his PhD in computer science and theoretical biophysics at the University of Heidelberg under Jeremy C. Smith. He held faculty positions at Free University of Berlin and Rice University before moving to Microsoft Research AI for Science in Berlin, where he is a Partner Research Manager. A true pioneer at the intersection of statistical mechanics and machine learning, his team develops computational methods to solve the sampling problem and rigorously compute free energies and kinetics in biomolecular and quantum systems. His foundational methodologies bridge deep learning and thermodynamics, including Boltzmann Generators and Biomolecular Emulator (BioEmu) models for equilibrium ensemble sampling and free energy calculation, Markov State Models (MSMs) and the variational approach to conformational dynamics (VAC/VAMPnets), and Transition Ensemble Estimators (TRAM) for combining unbiased and biased simulations, alongside neural network potentials and FermiNet/PauliNet quantum Monte Carlo architectures. He is the recipient of two ERC grants and the Joseph O. Hirschfelder Prize, a Fellow of the American Physical Society, and a member of the Berlin-Brandenburg Academy of Sciences and Humanities.

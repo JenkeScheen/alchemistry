@@ -1,0 +1,111 @@
+{% comment %}
+Interactive 3D structure viewer (3Dmol.js).
+  pdb     - PDB ID fetched from RCSB, e.g. 181L
+  file    - or a structure file in the repo, e.g. /assets/challenge/target.pdb
+  ligand  - residue name to highlight as sticks, e.g. BNZ (residues within 5 Å are shown too)
+  caption - text under the viewer
+  id      - element id, only needed when a page has more than one viewer
+{% endcomment %}
+{% assign viewer_id = include.id | default: 'structure-viewer' %}
+{% if include.file %}{% assign viewer_src = include.file | relative_url %}{% endif %}
+<figure class="structure-viewer">
+    <div class="structure-viewer-canvas" id="{{ viewer_id }}" role="img" aria-label="Interactive 3D view of {% if include.pdb %}PDB {{ include.pdb }}{% else %}the challenge structure{% endif %}">
+        <div class="structure-viewer-status">Loading structure…</div>
+        <div class="structure-viewer-hint" aria-hidden="true"></div>
+    </div>
+    <div class="structure-viewer-controls">
+        <button type="button" data-action="reset"><i class="fas fa-arrows-rotate" aria-hidden="true"></i> Reset view</button>
+        <button type="button" data-action="surface" aria-pressed="false"><i class="fas fa-cloud" aria-hidden="true"></i> Surface</button>
+        <button type="button" data-action="spin" aria-pressed="false"><i class="fas fa-rotate" aria-hidden="true"></i> Spin</button>
+        {% if include.pdb %}
+        <a href="https://www.rcsb.org/structure/{{ include.pdb }}" target="_blank" rel="noopener">PDB {{ include.pdb }} <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        {% endif %}
+    </div>
+    {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.5.3/3Dmol-min.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var el = document.getElementById('{{ viewer_id }}');
+    var figure = el.closest('.structure-viewer');
+    var status = el.querySelector('.structure-viewer-status');
+    var hint = el.querySelector('.structure-viewer-hint');
+    var zoomKey = /Mac|iPhone|iPad/.test(navigator.platform) ? '⌘' : 'Ctrl';
+    var ligand = { resn: '{{ include.ligand }}' };
+    var viewer, initialView, hintTimer;
+
+    function showStatus(message) {
+        status.textContent = message;
+        status.hidden = false;
+    }
+
+    function fail() {
+        showStatus('The structure could not be loaded.');
+    }
+
+    if (!window.$3Dmol) { fail(); return; }
+    viewer = $3Dmol.createViewer(el, { backgroundColor: 'white' });
+
+    // Let the page scroll past the viewer; zoom only with Ctrl/⌘ + scroll or a trackpad pinch
+    hint.textContent = 'Hold ' + zoomKey + ' and scroll to zoom';
+    el.addEventListener('wheel', function (ev) {
+        if (ev.ctrlKey || ev.metaKey) return;
+        ev.stopPropagation();
+        hint.classList.add('is-visible');
+        clearTimeout(hintTimer);
+        hintTimer = setTimeout(function () { hint.classList.remove('is-visible'); }, 1500);
+    }, { capture: true, passive: true });
+
+    // If the browser resets the graphics context, say so instead of leaving a blank box
+    el.querySelector('canvas').addEventListener('webglcontextlost', function () {
+        showStatus('The 3D view was interrupted. Reload the page to restore it.');
+    });
+
+    function show() {
+        status.hidden = true;
+        viewer.setStyle({}, { cartoon: { color: '#14b8a6' } });
+        viewer.setStyle({ hetflag: true }, {});
+        if (ligand.resn) {
+            viewer.addStyle({ within: { distance: 5, sel: ligand }, hetflag: false, byres: true }, { stick: { radius: 0.15 } });
+            viewer.setStyle(ligand, { stick: { colorscheme: 'orangeCarbon', radius: 0.3 } });
+        } else {
+            viewer.setStyle({ hetflag: true, not: { resn: ['HOH', 'WAT'] } }, { stick: { colorscheme: 'orangeCarbon', radius: 0.3 } });
+        }
+        viewer.zoomTo();
+        viewer.zoom(1.2);
+        viewer.render();
+        initialView = viewer.getView();
+    }
+
+    {% if viewer_src %}
+    fetch('{{ viewer_src }}')
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(function (data) { viewer.addModel(data, '{{ viewer_src | split: "." | last }}'); show(); })
+        .catch(fail);
+    {% else %}
+    var request = $3Dmol.download('pdb:{{ include.pdb }}', viewer, {}, show);
+    if (request && request.catch) request.catch(fail);
+    {% endif %}
+
+    figure.querySelector('[data-action="reset"]').addEventListener('click', function () {
+        if (initialView) { viewer.setView(initialView); viewer.render(); }
+    });
+
+    figure.querySelector('[data-action="surface"]').addEventListener('click', function () {
+        var on = this.getAttribute('aria-pressed') !== 'true';
+        this.setAttribute('aria-pressed', on);
+        if (on) {
+            viewer.addSurface($3Dmol.SurfaceType.VDW, { opacity: 0.6, color: 'white' }, { hetflag: false });
+        } else {
+            viewer.removeAllSurfaces();
+        }
+        viewer.render();
+    });
+
+    figure.querySelector('[data-action="spin"]').addEventListener('click', function () {
+        var on = this.getAttribute('aria-pressed') !== 'true';
+        this.setAttribute('aria-pressed', on);
+        viewer.spin(on ? 'y' : false, 0.5);
+    });
+});
+</script>

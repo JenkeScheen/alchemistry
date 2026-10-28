@@ -38,8 +38,8 @@ conference:
             relative_url: /program/invited-speakers/
           - name: Posters
             relative_url: /program/posters/
-          - name: Book of Abstracts
-            relative_url: /assets/book_of_abstracts.pdf
+          - name: Blind Challenge
+            relative_url: /program/blind-challenge/
       - name: About
         menu:
           - name: Committee

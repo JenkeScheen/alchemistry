@@ -1,0 +1,57 @@
+---
+layout: default
+---
+{% assign challenge = page.challenge %}
+
+<!-- Hero Section -->
+<header class="hero-section challenge-hero">
+    <div class="container">
+        <div class="hero-content">
+            {% if challenge.eyebrow %}<span class="challenge-eyebrow">{{ challenge.eyebrow }}</span>{% endif %}
+            <h1 class="hero-title">{{ page.title }}</h1>
+            <p class="hero-subtitle">{{ challenge.tagline }}</p>
+            {% if challenge.status %}
+            <span class="challenge-status"><i class="fas fa-circle" aria-hidden="true"></i>{{ challenge.status }}</span>
+            {% endif %}
+        </div>
+
+        {% if challenge.facts %}
+        <ul class="challenge-facts">
+            {% for fact in challenge.facts %}
+            <li>
+                {% include icon.html name=fact.icon %}
+                <div>
+                    <span class="challenge-fact-label">{{ fact.label }}</span>
+                    <span class="challenge-fact-value">{{ fact.value }}</span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content container challenge-page">
+    {% if challenge.resources %}
+    <!-- Link cards; an empty url shows the button as "Available at launch" -->
+    <div class="challenge-resources">
+        {% for item in challenge.resources %}
+        <div class="challenge-card">
+            <span class="challenge-card-icon">
+                {% if item.icon == 'hugging-face' %}<span class="hf-mark" role="img" aria-label="Hugging Face">🤗</span>{% else %}{% include icon.html name=item.icon style=item.icon_style %}{% endif %}
+            </span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+            {% if item.url and item.url != "" %}
+            <a href="{{ item.url }}" class="btn btn-primary" target="_blank" rel="noopener">{{ item.button }} <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            {% else %}
+            <span class="btn is-disabled" aria-disabled="true">Available at launch</span>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {{ content }}
+</main>
